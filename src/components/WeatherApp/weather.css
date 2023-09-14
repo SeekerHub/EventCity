@@ -30,10 +30,11 @@
   margin-top: 30px;
 }
 .weather form input {
-  padding: 10px;
-  border: none;
-  border-bottom: 2px dashed rgb(2, 57, 88);
-  margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #e1d4d4;
+    border-bottom: 2px dashed rgb(2, 57, 88);
+    margin-right: 10px;
+    border-radius: 7px;
 }
 
 .weather form input:focus {

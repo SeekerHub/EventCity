@@ -1,10 +1,24 @@
 .App {
   display: flex;
-  align-items: center;
+  
+  /* background-image: url("./components/WeatherApp/back.jpg"); */
+  /* align-items: center; */
   justify-content: center;
   text-align: center;
+  background: aliceblue;
+  height: 100vh;
+  width: 100%;
+  margin-top: -10px;
+  /* display: flex;
+  justify-content: center; */
 }
-
+/* .AppNew{
+  height: 100vh,
+  font-size: 50px,
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  background-image: url("./components/WeatherApp/back.jpg");
+} */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -18,6 +32,7 @@
 
 .App-header {
   background-color: #282c34;
+  background-image: url("./components/WeatherApp/back.jpg");;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
