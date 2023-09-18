@@ -1,8 +1,13 @@
 import React, {useEffect, useState} from "react";
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Weather from "./components/WeatherApp/Weather";
 import NewsApp from "./components/NewsApp/NewsApp";
 import Search from "./components/Search/search";
+import NavApp from "./components/NavBar.js/NavApp";
+import Home from "./components/Home/Home";
+// import NavBarComp from "./components/NavBarComp";
+// import Navbar from "./components/NavBar.js/NavBarComp";
 function App() {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true)
@@ -16,16 +21,10 @@ function App() {
     setData(dt);
   }
   return (
-    <div className="App">
-      <div className="AppNew">
-        <Search handleUpdate={handleUpdate} updateLoader = {updateLoader}/>
-        <div style={{display: "flex", justifyContent: "space-between", width: "88%"}}>
-          <Weather  loader ={loader} data = {data}/>
-          <NewsApp />
-        </div>
-      </div>
-      
-    </div>
+    <BrowserRouter>
+        <NavApp />
+        <Home />
+    </BrowserRouter>
   );
 }
 
