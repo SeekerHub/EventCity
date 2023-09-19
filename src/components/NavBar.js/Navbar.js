@@ -1,8 +1,10 @@
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+// import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import "./navbar.css"
 import Home from "../Home/Home";
+import Bookings from "../Bookings/Bookings";
 import React from "react";
-const Navbar = () => {
+export default function Navbar(){
   const [showNavbar, setShowNavbar] = React.useState(false);
 
   const handleShowNavbar = () => {
@@ -21,19 +23,19 @@ const Navbar = () => {
         <div className={`nav-elements`}>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <NavLink to="/blogs">Blogs</NavLink>
+              <Link to="/blogs">Bookings</Link>
             </li>
             <li>
-              <NavLink to="/projects">Projects</NavLink>
+              <Link to="/bookings">My Bookings</Link>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -42,26 +44,6 @@ const Navbar = () => {
   );
 };
 
-// const Home = () => <h2>You are in the Home</h2>;
-const Blogs = () => <h2>You are in the Blogs</h2>;
-const Projects = () => <h2>You are in the Projects</h2>;
-const About = () => <h2>You are in the About</h2>;
-const Contact = () => <h2>You are in the Contact</h2>;
-
-export default function NavApp ()  {
-  return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route exact path="/home" component={Home} />
-        <Route path="/blogs" component={Home} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-      </Routes>
-    </>
-  );
-};
 
 const Hamburger = () => (
   <svg

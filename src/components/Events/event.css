@@ -1,0 +1,27 @@
+.containerEvents{
+    width: 250px;
+    border: 1px solid #afa9a9;
+    padding: 7px;
+    box-shadow: 1px 1px #d6cfcf;
+}
+
+.bookingButton{
+    
+    background: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    border-radius: 7px;
+    
+    margin-top: 10px;
+
+
+}
+
+.cardsEvents{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 62px;
+}

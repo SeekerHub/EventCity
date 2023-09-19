@@ -22,9 +22,9 @@
   align-items: center;
 }
 .weather .title {
-  font-size: 4rem;
+  font-size: 3rem;
 
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Poppins", sans-serif;
 }
 .weather form {
   margin-top: 30px;

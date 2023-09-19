@@ -7,12 +7,12 @@ import "./weather.css";
 export default function Search(props){
   
   const [form, setForm] = useState({
-    city: "",
+    city: "Kolkata",
     // country: "",
   });
-//   useEffect(() => {
-
-//   }, [loader])
+  useEffect(() => {
+    weatherData();
+  }, [])
   const APIKEY = "fe4feefa8543e06d4f3c66d92c61b69c";
   
   async function weatherData(e) {

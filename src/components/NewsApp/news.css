@@ -1,12 +1,17 @@
 .container{
     padding : 10px;
     width: 300px;
-    height: 340px;
+    height: max-content;
     background: #f1f1f1fc;;
     text-align: left;
     border: 1px solid ghostwhite;
     border-radius: 7px;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: "Poppins", sans-serif;
+}
+.container-cards{
+    border: 3px dashed gray;
+    border-radius: 21px;
+    padding: 40px;
 }
 .cards{
     display: flex;
