@@ -21,7 +21,7 @@ export const addMovie = async (req, res, next) => {
   });
 
   //create new movie
-  const { title, description, releaseDate, posterUrl, featured, actors } =
+  const { title, description, releaseDate, posterUrl, featured, actors, isEvent } =
     req.body;
   if (
     !title &&
@@ -44,6 +44,7 @@ export const addMovie = async (req, res, next) => {
       admin: adminId,
       posterUrl,
       title,
+      isEvent,
     });
     const session = await mongoose.startSession();
     const adminUser = await Admin.findById(adminId);
@@ -67,7 +68,22 @@ export const getAllMovies = async (req, res, next) => {
   let movies;
 
   try {
-    movies = await Movie.find();
+    movies = await Movie.find({});
+  } catch (err) {
+    return console.log(err);
+  }
+
+  if (!movies) {
+    return res.status(500).json({ message: "Request Failed" });
+  }
+  return res.status(200).json({ movies });
+};
+
+export const getAllEvents = async (req, res, next) => {
+  let movies;
+
+  try {
+    movies = await Movie.find({});
   } catch (err) {
     return console.log(err);
   }

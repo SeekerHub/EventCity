@@ -20,3 +20,6 @@ userRouter.post("/login", login);
 userRouter.get("/bookings/:id", getBookingsOfUser);
 
 export default userRouter;
+// jFwVwDfXRVM49MkW //dbUser
+
+//EK2h72UB9kCbEJAx
