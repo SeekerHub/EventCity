@@ -38,7 +38,7 @@ const Booking = () => {
             variant="h4"
             textAlign={"center"}
           >
-            Book TIckets Of Movie: {movie.title}
+            {movie.title}
           </Typography>
           <Box display={"flex"} justifyContent={"center"}>
             <Box
@@ -46,8 +46,8 @@ const Booking = () => {
               justifyContent={"column"}
               flexDirection="column"
               paddingTop={3}
-              width="50%"
-              marginRight={"auto"}
+              width="30%"
+              // marginRight={"auto"}
             >
               <img
                 width="80%"
@@ -66,7 +66,7 @@ const Booking = () => {
                 </Typography>
               </Box>
             </Box>
-            <Box width={"50%"} paddingTop={3}>
+            <Box width={"30%"} paddingTop={3}>
               <form onSubmit={handleSubmit}>
                 <Box
                   padding={5}

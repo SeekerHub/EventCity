@@ -8,6 +8,7 @@ import {
   TextField,
   Toolbar,
 } from "@mui/material";
+import logo from '../components/logo.png'
 import MovieIcon from "@mui/icons-material/Movie";
 import { Box } from "@mui/system";
 import { getAllMovies } from "../api-helpers/api-helpers";
@@ -37,11 +38,13 @@ const Header = () => {
     }
   };
   return (
-    <AppBar position="sticky" sx={{ bgcolor: "#2b2d42" }}>
+    <AppBar position="sticky" sx={{ bgcolor: "#16161a" }}>
       <Toolbar>
         <Box width={"20%"}>
           <IconButton LinkComponent={Link} to="/">
-            <MovieIcon style={{ color: "white", fontSize: 40 }} />
+            <div>
+              <img src={logo} style={{width: "66px"}}/> 
+            </div>
           </IconButton>
         </Box>
         <Box width={"30%"} margin="auto">
