@@ -1,4 +1,5 @@
 # The site is live here :  [Click here](https://eventcity-app.onrender.com/) 
+(The website might take sometime to load is because it is hosted on a free tier service.) 
 
 # Getting Started with Create React App
 
