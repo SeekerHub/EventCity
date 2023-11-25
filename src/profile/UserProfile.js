@@ -75,7 +75,7 @@ const UserProfile = () => {
               textAlign="center"
               padding={2}
             >
-              Bookings
+            Your Bookings
             </Typography>
             <Box
               margin={"auto"}

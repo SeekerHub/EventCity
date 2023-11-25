@@ -56,7 +56,7 @@ const User = () => {
           textAlign="center"
           padding={2}
         >
-          Bookings
+        Your Bookings
         </Typography>
 
         <Box margin="auto" display="flex" flexDirection={"column"} width="80%">

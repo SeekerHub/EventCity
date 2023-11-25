@@ -27,7 +27,7 @@ const Header = () => {
       .then((data) => setMovies(data.movies))
       .catch((err) => console.log(err));
   }, []);
-  const logout = (isAdmin) => {
+    const logout = (isAdmin) => {
     dispatch(isAdmin ? adminActions.logout() : userActions.logout());
   };
   const handleChange = (e, val) => {
@@ -37,7 +37,7 @@ const Header = () => {
       navigate(`/booking/${movie._id}`);
     }
   };
-  return (
+    return (
     <AppBar position="sticky" sx={{ bgcolor: "#16161a" }}>
       <Toolbar>
         <Box width={"20%"}>
@@ -66,14 +66,14 @@ const Header = () => {
           <Tabs
             textColor="inherit"
             indicatorColor="secondary"
-            value={value}
+            // value={value}
             onChange={(e, val) => setValue(val)}
           >
-            <Tab LinkComponent={Link} to="/movies" label="Movies" />
+            <Tab LinkComponent={Link} to="/movies" label="Events" />
             {!isAdminLoggedIn && !isUserLoggedIn && (
               <>
                 <Tab label="Admin" LinkComponent={Link} to="/admin" />
-                <Tab label="Auth" LinkComponent={Link} to="/auth" />
+                <Tab label="Login" LinkComponent={Link} to="/auth" />
               </>
             )}
             {isUserLoggedIn && (

@@ -11,7 +11,7 @@ const Booking = () => {
   console.log(id);
 
   useEffect(() => {
-    getMovieDetails(id)
+        getMovieDetails(id)
       .then((res) => setMovie(res.movie))
       .catch((err) => console.log(err));
   }, [id]);
