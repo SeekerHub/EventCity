@@ -2,10 +2,12 @@ import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { getAllMovies } from "../../api-helpers/api-helpers";
 import MovieItem from "./MovieItem";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Movies = () => {
   const [movies, setMovies] = useState();
   const [events, setEvents] = useState([]);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
     getAllMovies()
       .then((data) => {
@@ -20,6 +22,7 @@ const Movies = () => {
         })
         setMovies(movi);
         setEvents(even);
+        setLoader(false);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -45,7 +48,7 @@ const Movies = () => {
         justifyContent="center"
         flexWrap={"wrap"}
       >
-        {movies &&
+        {loader?  <CircularProgress disableShrink />:movies &&
           movies.map((movie, index) => (
             <MovieItem
               key={index}
@@ -76,7 +79,7 @@ const Movies = () => {
         justifyContent="center"
         flexWrap={"wrap"}
       >
-        {events &&
+        {loader?  <CircularProgress disableShrink />:events &&
           events.map((event, index) => (
             <MovieItem
               key={index}

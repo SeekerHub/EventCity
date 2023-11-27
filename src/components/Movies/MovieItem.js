@@ -35,7 +35,7 @@ const MovieItem = ({ title, releaseDate, posterUrl, id }) => {
           variant="contained"
           fullWidth
           LinkComponent={Link}
-          to={`/booking/${id}`}
+          to={`/booking/${id?id:1}`}
           sx={{
             margin: "auto",
             paddingTop : "10",

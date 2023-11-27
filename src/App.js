@@ -32,6 +32,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<Movies />} />
+          <Route path="/booking/1" element={<Auth />} />
+
           {!isUserLoggedIn && !isAdminLoggedIn && (
             <>
               {" "}

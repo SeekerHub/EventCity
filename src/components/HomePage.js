@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import { getAllMovies, getAllEvents } from "../api-helpers/api-helpers";
 import MovieItem from "./Movies/MovieItem";
 
+import CircularProgress from '@mui/material/CircularProgress'
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [events, setEvents] = useState([]);
-
+  const [loader, setLoader] = useState(true)
 
  
   const fetchAllMovies = () => {
@@ -15,7 +16,6 @@ const HomePage = () => {
     .then((data) => {
       let movi = [];
       let even = [];
-      debugger;
       data.movies.forEach(obj => {
         if(obj["isEvent"]==false){
           movi.push(obj);
@@ -24,6 +24,7 @@ const HomePage = () => {
         }
       })
       setMovies(movi);
+      setLoader(false)
       setEvents(even);
     })
     .catch((err) => console.log(err));
@@ -56,7 +57,7 @@ const HomePage = () => {
         alignItems="center"
         flexWrap="wrap"
       >
-        {movies &&
+        {loader?  <CircularProgress disableShrink />:movies &&
           movies
             .slice(0, 4)
             .map((movie, index) => (
@@ -82,7 +83,7 @@ const HomePage = () => {
         alignItems="center"
         flexWrap="wrap"
       >
-        {events &&
+        {loader?  <CircularProgress disableShrink />:events &&
           events
             .slice(0, 4)
             .map((movie, index) => (
