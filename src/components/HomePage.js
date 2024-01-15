@@ -38,7 +38,7 @@ const HomePage = () => {
     <Box width={"100%"} height="100%" margin="auto" marginTop={2}>
       <Box margin={"auto"} width="80%" height={"40vh"} padding={2}>
         <img
-          src="https://i.ytimg.com/vi/bweRG6WueuM/maxresdefault.jpg"
+          src="https://w0.peakpx.com/wallpaper/33/751/HD-wallpaper-the-batman-movie-poster-the-batman-batman-superheroes-movies-2022-movies.jpg"
           alt="Brahmastra"
           width={"100%"}
           height={"100%"}
