@@ -1,108 +1,31 @@
-import React, { useEffect, useState } from "react";
-import {
-  AppBar,
-  Autocomplete,
-  IconButton,
-  Tab,
-  Tabs,
-  TextField,
-  Toolbar,
-} from "@mui/material";
-import logo from '../components/logo.png'
-import MovieIcon from "@mui/icons-material/Movie";
-import { Box } from "@mui/system";
-import { getAllMovies } from "../api-helpers/api-helpers";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { adminActions, userActions } from "../store";
+import logo from "../components/logo.png";
+import "./Header.css"; // Import the CSS file
+
 const Header = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const isAdminLoggedIn = useSelector((state) => state.admin.isLoggedIn);
-  const isUserLoggedIn = useSelector((state) => state.user.isLoggedIn);
-  const [value, setValue] = useState();
-  const [movies, setMovies] = useState([]);
-  useEffect(() => {
-    getAllMovies()
-      .then((data) => setMovies(data.movies))
-      .catch((err) => console.log(err));
-  }, []);
-    const logout = (isAdmin) => {
-    dispatch(isAdmin ? adminActions.logout() : userActions.logout());
-  };
-  const handleChange = (e, val) => {
-    const movie = movies.find((m) => m.title === val);
-    console.log(movie);
-    if (isUserLoggedIn) {
-      navigate(`/booking/${movie._id}`);
-    }
-  };
-    return (
-    <AppBar position="sticky" sx={{ bgcolor: "#16161a" }}>
-      <Toolbar>
-        <Box width={"20%"}>
-          <IconButton LinkComponent={Link} to="/">
-            <div>
-              <img src={logo} style={{width: "66px"}}/> 
-            </div>
-          </IconButton>
-        </Box>
-        <Box width={"30%"} margin="auto">
-          <Autocomplete
-            onChange={handleChange}
-            freeSolo
-            options={movies && movies.map((option) => option.title)}
-            renderInput={(params) => (
-              <TextField
-                sx={{ input: { color: "white" } }}
-                variant="standard"
-                {...params}
-                placeholder="Search Across Multiple Movies"
-              />
-            )}
-          />
-        </Box>
-        <Box display={"flex"}>
-          <Tabs
-            textColor="inherit"
-            indicatorColor="secondary"
-            // value={value}
-            onChange={(e, val) => setValue(val)}
-          >
-            <Tab LinkComponent={Link} to="/movies" label="Events" />
-            {!isAdminLoggedIn && !isUserLoggedIn && (
-              <>
-                <Tab label="Admin" LinkComponent={Link} to="/admin" />
-                <Tab label="Login" LinkComponent={Link} to="/auth" />
-              </>
-            )}
-            {isUserLoggedIn && (
-              <>
-                <Tab label="Profile" LinkComponent={Link} to="/user" />
-                <Tab
-                  onClick={() => logout(false)}
-                  label="Logout"
-                  LinkComponent={Link}
-                  to="/"
-                />
-              </>
-            )}
-            {isAdminLoggedIn && (
-              <>
-                <Tab label="Add Movie" LinkComponent={Link} to="/add" />
-                <Tab label="Profile" LinkComponent={Link} to="/user-admin" />
-                <Tab
-                  onClick={() => logout(true)}
-                  label="Logout"
-                  LinkComponent={Link}
-                  to="/"
-                />
-              </>
-            )}
-          </Tabs>
-        </Box>
-      </Toolbar>
-    </AppBar>
+  return (
+    <header className="navbar">
+      <div className="navbar-left">
+        <Link to="/" className="navbar-logo">
+          <img src={logo} alt="Logo" />
+        </Link>
+        <span className="navbar-title">EventCity</span>
+      </div>
+      <div className="navbar-center">
+        <input
+          type="text"
+          className="navbar-search"
+          placeholder="Search Events"
+        />
+      </div>
+      <nav className="navbar-right">
+        <Link to="/movies" className="navbar-link">Events</Link>
+        <Link to="/admin" className="navbar-link">Admin</Link>
+        <Link to="/auth" className="navbar-link">Login</Link>
+        {/* Add conditional rendering for Profile/Logout as needed */}
+      </nav>
+    </header>
   );
 };
 
