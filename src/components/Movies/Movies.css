@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
+.movies-root {
+  width: 100%;
+  min-height: 100vh;
+  background: #111111;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 2rem;
+}
+
+.movies-section {
+  margin: 2rem auto 1rem auto;
+  text-align: center;
+}
+
+.movies-title {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  margin: 0;
+  background: #232946;
+  padding: 1rem 0;
+  border-radius: 12px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+
+.movies-list {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 120px;
+}
+
+.movies-loader {
+  margin: auto;
+  border: 6px solid #232946;
+  border-top: 6px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
